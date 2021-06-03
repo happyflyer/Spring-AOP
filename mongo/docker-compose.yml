@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongo_lifei:
+    image: mongo:4.4.6
+    container_name: mongo_lifei
+    restart: always
+    ports:
+      - '44061:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: mongo@root123456
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone
+      - ./data:/data/db

@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: false
+  datasource:
+    username: root
+    password: MySQL@root123456
+    url: jdbc:mysql://192.168.9.16:44060/spring_aop_datalog
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    mongodb:
+      host: 192.168.9.16
+      port: 44061
+      database: spring_aop_datalog
+      repositories:
+        enabled: true
+      username: root
+      password: mongo@root123456
+      authentication-database: admin

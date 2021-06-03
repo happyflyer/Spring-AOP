@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mysql_lifei:
+    image: mysql:8.0.25
+    container_name: mysql_lifei
+    restart: always
+    ports:
+      - '44060:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: MySQL@root123456
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone
+      - ./config/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+      - ./sql:/docker-entrypoint-initdb.d
+      - ./data:/var/lib/mysql
